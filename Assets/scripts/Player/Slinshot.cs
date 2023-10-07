@@ -20,7 +20,7 @@ public class Slinshot : MonoBehaviour
     public float velosityMult=5000;
     public float rechardTime;
 
-    //[SerializeField] private ActiveButtobExplosion ABX;
+    [SerializeField] private ActiveButtobExplosion ABX;
     [SerializeField] private Score _score;
 
     [SerializeField]
@@ -54,7 +54,10 @@ public class Slinshot : MonoBehaviour
 
         if (Mobileplatform)
         {
-            if (FireMobile && aiming != false) Fire();
+            if (FireMobile && aiming != false) {
+                Fire();
+                Debug.LogError("fire");
+            }
             else { return; }
         }
 
@@ -71,11 +74,12 @@ public class Slinshot : MonoBehaviour
         //Debug.LogError("firer");
         _projectile = Instantiate(projectPrefab) as GameObject;
         _projectile.transform.position = ProjectPosition.position;
+        _projectile.transform.rotation = ProjectPosition.rotation;
         RB = _projectile.GetComponent<Rigidbody>();
         //RB.mass= RbMass;
         RB.AddForce(ProjectPosition.forward * velosityMult);
         _projectile.GetComponent<Saw>().GetScore = _score;
-        //_projectile.GetComponent<Projectile>()._aBX = ABX;
+        _projectile.GetComponent<Projectile>()._aBX = ABX;
         _projectile.GetComponent<Projectile>().SmokeActive();
         //ABX.Projectile = _projectile;
         //ABX.StartProjectile();
@@ -119,6 +123,7 @@ public class Slinshot : MonoBehaviour
 
     public void FireMoobileTry()
     {
+        
         FireMobile = true;
     }
     public void FireMoobileFalse()

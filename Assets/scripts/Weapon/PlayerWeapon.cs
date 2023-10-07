@@ -12,7 +12,7 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private Transform _towerTank;
     [SerializeField] private Transform _point;
     [SerializeField] private GameObject _projectilePrefab;
-    //[SerializeField] private ActiveButtobExplosion ABX;
+    [SerializeField] private ActiveButtobExplosion ABX;
     [SerializeField] float velosityMult = 500f;
     private GameObject _projectile;
     void Start()
@@ -33,9 +33,9 @@ public class PlayerWeapon : MonoBehaviour
             Rigidbody rb = _projectile.GetComponent<Rigidbody>();
             rb.AddForce ( _projectile.transform.right * velosityMult,ForceMode.Impulse);
 
-            //_projectile.GetComponent<Projectile>()._aBX = ABX;
-            //ABX.Projectile = _projectile;
-            //_projectile.GetComponent<Projectile>().PW = this;
+            _projectile.GetComponent<Projectile>()._aBX = ABX;
+            ABX.Projectile = _projectile;
+            _projectile.GetComponent<Projectile>().PW = this;
 
             Invoke("Rechard", recharg);
         }

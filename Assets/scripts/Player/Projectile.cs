@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public PlayerWeapon PW;
-    //public ActiveButtobExplosion _aBX;
+    public ActiveButtobExplosion _aBX;
     public GameObject TrailSmoke;
 
     void Start()
@@ -24,7 +24,7 @@ public class Projectile : MonoBehaviour
     }
     public void ProjectileNull()
     {
-        //_aBX.ExplosionProjectile();
+        _aBX.ExplosionProjectile();
         //PW._aiming = false;
     }
     public void SmokeActive()

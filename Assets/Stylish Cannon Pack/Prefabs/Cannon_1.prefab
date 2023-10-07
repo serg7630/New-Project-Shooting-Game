@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 364581046420390059}
+  - component: {fileID: 2212096457054857060}
   m_Layer: 6
   m_Name: Cannon_1
   m_TagString: Untagged
@@ -33,6 +34,27 @@ Transform:
   - {fileID: 3104950018326453483}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2212096457054857060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364581046420390058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea99d1aa9a6b1fe4581939acf41d319a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinX: {x: 340, y: 7}
+  MinY: {x: 40, y: 130}
+  speedRotation: 0.2
+  returnControl: 1
+  InputHorizont: 0
+  InputVertical: 0
+  MobilePlatform: 0
+  mobileMoveButtom: {fileID: 0}
+  Dynamic_joystick: {fileID: 0}
 --- !u!1 &1361937741783154293
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 936039288194338352}
   - component: {fileID: -8870238257544315766}
   - component: {fileID: 5737869875367477844}
+  - component: {fileID: 3897896291795898070}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -147,4 +148,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PW: {fileID: 0}
-  TrailSmoke: {fileID: 0}
+  _aBX: {fileID: 0}
+  TrailSmoke: {fileID: 8133051946415441333, guid: 05e4aac4ef0abb444a0effda9c8437ba, type: 3}
+--- !u!114 &3897896291795898070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3011681975930428998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a687f498d3fa8a44bb45f1aa0489bbd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Force: 100
+  exlorer: 0
+  radiusexplorer: 2
+  GetScore: {fileID: 0}
+  _hitDamages: 1
+  _explosion: {fileID: 5114151861376391470, guid: 0d25a5086fa8c2045a8499d507a75159, type: 3}

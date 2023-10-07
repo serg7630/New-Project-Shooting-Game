@@ -18,11 +18,12 @@ public class PlayerControl : MonoBehaviour
 
      public  bool MobilePlatform;
     [SerializeField] GameObject mobileMoveButtom;
-    [SerializeField] VariableJoystick joystick;
+    [SerializeField] DynamicJoystick Dynamic_joystick;
 
     public void Awake()
     {
-        mobileMoveButtom = GameObject.Find("Variable Joystick");
+        mobileMoveButtom = GameObject.Find("Dynamic Joystick");
+        Dynamic_joystick = mobileMoveButtom.GetComponent<DynamicJoystick>();
 
         if (!Application.isMobilePlatform)  //если не мобильная патформа
         {
@@ -41,8 +42,8 @@ public class PlayerControl : MonoBehaviour
         //print(joystick.Horizontal);
         if (MobilePlatform)
         {
-            InputHorizont = joystick.Horizontal * speedRotation;
-            InputVertical = joystick.Vertical * speedRotation;
+            InputHorizont = Dynamic_joystick.Horizontal * speedRotation*-1;
+            InputVertical = Dynamic_joystick.Vertical * speedRotation*-1;
             return;
         }
         InputHorizont = Input.GetAxis("Horizontal")*speedRotation;
@@ -68,7 +69,8 @@ public class PlayerControl : MonoBehaviour
         if (rotate.x < MinX.x & rotate.x > MinX.x-10f) rotate.x = MinX.x/* print("rotateX")*/;
         if (rotate.x > MinX.y & rotate.x < MinX.y+20f) rotate.x = MinX.y;
 
-        transform.rotation = Quaternion.Euler(rotate);
+        //transform.rotation = Quaternion.Euler(rotate);
+        transform.localRotation = Quaternion.Euler(rotate);
     }
 
     public  void HideMobilePlatform()
