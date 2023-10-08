@@ -136,14 +136,14 @@ public class Score : MonoBehaviour
     public void AddCoins(int AddCoin)
     {
         Coins += AddCoin;
-        //GameMeneger.S.SetValueCoins(Coins);
+        GameMeneger.S.SetValueCoins(Coins);
         ShowCoin();
     }
     public void ShowCoin()
     {
         //StaticValueShowAds.S.setCoin(Coins);
         ////Debug.LogError("setCoin");
-        //MainCoins.text = Coins.ToString();
+        MainCoins.text = Coins.ToString();
 
     }
 

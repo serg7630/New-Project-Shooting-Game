@@ -118,3 +118,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6628b38dd8e50943bdc291cd501ff4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ValueAddCoins: 1
+  One_hit: 0
+  valueCoin: 1
+  hit_numbers: 1
+  _move_Object: 0
+  _goal_tank: 0
+  ParentCastle: 0

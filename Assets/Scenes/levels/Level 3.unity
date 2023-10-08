@@ -2820,7 +2820,7 @@ MonoBehaviour:
   MobileJoystic: {fileID: 0}
   _panelVictory: {fileID: 869667221}
   PauseOnStart: {fileID: 1710760730}
-  _buttomFire: {fileID: 0}
+  _buttomExplosion: {fileID: 0}
   VictorySprite: {fileID: 21300048, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   DefaultImage: {fileID: 338293228}
   VictoryImage: {fileID: 1613790814}
@@ -3850,13 +3850,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936313475}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.026260221, y: -0, z: -0, w: 0.9996551}
-  m_LocalPosition: {x: 235, y: 638, z: -1233.9}
-  m_LocalScale: {x: 4531.084, y: 1980.0175, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 235, y: 307, z: -1233.9}
+  m_LocalScale: {x: 1463.2578, y: 685.3162, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2045543664}
-  m_LocalEulerAnglesHint: {x: -3.01, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &936313477
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4121,7 +4121,7 @@ Transform:
   m_GameObject: {fileID: 1047305554}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 90.6, y: 148.4, z: 69.8}
+  m_LocalPosition: {x: -49.4, y: 132.5, z: 85.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4927,7 +4927,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 235, y: 204, z: -1233.9}
-  m_LocalScale: {x: 4636.385, y: 1769.061, z: 1}
+  m_LocalScale: {x: 387.0914, y: 205.0414, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2045543664}

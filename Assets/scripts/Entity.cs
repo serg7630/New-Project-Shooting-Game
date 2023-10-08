@@ -152,7 +152,7 @@ public class Entity : MonoBehaviour
 
         
         var rb = cube.gameObject.AddComponent<Rigidbody>();
-        rb.constraints = RigidbodyConstraints.FreezePositionZ;
+        //rb.constraints = RigidbodyConstraints.FreezePositionZ;
         
 
         RecalculateCubes();

@@ -72,7 +72,7 @@ public class Saw : MonoBehaviour
     }
     private void UpdateScore()
     {
-        GetScore.invokeCoundChild();
+        //GetScore.invokeCoundChild();
     }
     public void DestroyProjectile()
     {
