@@ -12,7 +12,7 @@ public class Slinshot : MonoBehaviour
     public Vector3 _launcPos;
     [SerializeField] GameObject _projectile;
     public bool aiming=false;
-    public bool Mobileplatform=false;
+    public bool Mobileplatform=true;
 
     [SerializeField] private bool FireMobile;
 
@@ -52,21 +52,21 @@ public class Slinshot : MonoBehaviour
     void Update()
     {
 
-        if (Mobileplatform)
-        {
+        //if (Mobileplatform)
+        //{
             if (FireMobile && aiming != false) {
                 Fire();
-                Debug.LogError("fire");
+                //Debug.LogError("fire");
             }
-            else { return; }
-        }
+            //else { return; }
+        //}
 
-        if (Input.GetMouseButton(0)&&aiming!=false)
-        {
-            if (Mobileplatform) return;
-            Fire();
-        }
-      
+        //if (Input.GetMouseButton(0) && aiming != false)
+        //{
+        //    if (Mobileplatform) return;
+        //    Fire();
+        //}
+
 
     }
      public void Fire()

@@ -21,9 +21,10 @@ public class Entity : MonoBehaviour
         main_go = this.gameObject;
         _rb = GetComponent<Rigidbody>();
         _rb.constraints = RigidbodyConstraints.FreezePositionZ |
-            RigidbodyConstraints.FreezeRotationX /*|
-                                                  * RigidbodyConstraints.FreezeRotationZ*/ |
+            RigidbodyConstraints.FreezeRotationX |
+                                                  //RigidbodyConstraints.FreezeRotationZ |
                                                   RigidbodyConstraints.FreezeRotationY;
+        if (this.gameObject.tag == "EnemyTank") _rb.constraints = RigidbodyConstraints.FreezeRotationZ;
         _rb.mass = transform.childCount;
         CollectCubes();
         RecalculateCubes();
@@ -152,8 +153,8 @@ public class Entity : MonoBehaviour
 
         
         var rb = cube.gameObject.AddComponent<Rigidbody>();
-        //rb.constraints = RigidbodyConstraints.FreezePositionZ;
-        
+        rb.constraints = RigidbodyConstraints.FreezePositionZ;
+
 
         RecalculateCubes();
         cube.transform.SetParent (/*parent.transform*/null);

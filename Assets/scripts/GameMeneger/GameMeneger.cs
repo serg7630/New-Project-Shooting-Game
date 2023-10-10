@@ -51,13 +51,13 @@ public class GameMeneger : MonoBehaviour
     [SerializeField] PlayerControl PL;
 
     [SerializeField] Slinshot Sling;
-    
 
 
-    //[DllImport("__Internal")]
-    //private static extern void ShowAds();
 
-   
+    [DllImport("__Internal")]
+    private static extern void ShowAds();
+
+
     void Start()
     {
         SetValueCoins(0);
@@ -135,7 +135,7 @@ public class GameMeneger : MonoBehaviour
         Slinshot.S.aiming = false;
         Slinshot.S.stopControl();
         Camera.main.GetComponent<Score>().StopTank = true;
-        //BagroundSource.Pause();
+        BagroundSource.Pause();
 
         if (PlayerControl.S.MobilePlatform == true)
         {
@@ -145,7 +145,7 @@ public class GameMeneger : MonoBehaviour
     //рестарт
     public void Restart()
     {
-
+        if (Time.timeScale < 1) Time.timeScale = 1;
         //StaticValueShowAds.S.PlusShowAdsVal();
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -157,7 +157,7 @@ public class GameMeneger : MonoBehaviour
     {
         if (Time.timeScale != 1) Time.timeScale = 1;
         if(FinishActive) return;
-        //BagroundSource.Pause();
+        BagroundSource.Pause();
         Slinshot.S.aiming = false;
         Slinshot.S.stopControl();
         _buttomPauseUI.SetActive(false);
@@ -170,6 +170,7 @@ public class GameMeneger : MonoBehaviour
         LevelPlus(ActiveScene);
         _buttomFire.SetActive(false);
 
+        Time.timeScale = 0;
         //PlayerMove.S.HideMobileJoystic();
     }
     //пауза
@@ -190,12 +191,13 @@ public class GameMeneger : MonoBehaviour
         BagroundManeger.S.GamePause = true;
         //_buttomExplosion.SetActive(false);
         _buttomPauseUI.SetActive(false);
-        //BagroundSource.Pause();
+        BagroundSource.Pause();
     }
     //снятие с паузы
     public void continium()
     {
-        //BagroundSource.Play();
+        if (Time.timeScale < 1) Time.timeScale = 1;
+        BagroundSource.Play();
         _buttomPauseUI.SetActive(true);
         //_buttomExplosion.SetActive(true);
         _panelPause.SetActive(false);
@@ -238,6 +240,7 @@ public class GameMeneger : MonoBehaviour
     }
     public void ContiniumVictory()
     {
+        if (Time.timeScale < 1) Time.timeScale = 1;
         //int activeScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
@@ -335,6 +338,7 @@ public class GameMeneger : MonoBehaviour
         _buttomPauseUI.SetActive(true);
         Slinshot.S.aiming = true;
         Slinshot.S.startControl();
+        BagroundSource.Play();
     }
 
 

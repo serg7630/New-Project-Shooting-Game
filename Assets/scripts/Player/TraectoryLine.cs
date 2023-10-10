@@ -18,8 +18,8 @@ public class TraectoryLine : MonoBehaviour
     public LayerMask CollidableLayers;
     void Start()
     {
-        //cannonController = GetComponent<Slinshot>();
-        //lineRenderer = GetComponent<LineRenderer>();
+        cannonController = transform.parent.GetComponent<Slinshot>();
+        lineRenderer = GetComponent<LineRenderer>();
     }
 
 

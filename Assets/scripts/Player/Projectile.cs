@@ -24,7 +24,7 @@ public class Projectile : MonoBehaviour
     }
     public void ProjectileNull()
     {
-        _aBX.ExplosionProjectile();
+        //_aBX.ExplosionProjectile();
         //PW._aiming = false;
     }
     public void SmokeActive()
