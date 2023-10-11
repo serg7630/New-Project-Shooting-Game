@@ -18,6 +18,7 @@ public class GameMeneger : MonoBehaviour
     [SerializeField] GameObject _panelVictory;
     [SerializeField] GameObject PauseOnStart;
 
+    
 
     [SerializeField] GameObject _buttomFire;
 
@@ -34,7 +35,9 @@ public class GameMeneger : MonoBehaviour
     [SerializeField] bool MiusicInGame;
     [Header("поле с уровнем при паузе")]
     [SerializeField] TMPro.TextMeshProUGUI LevelName;
-    
+
+
+   public bool PauseOnStartTrue;
     int Coins;
     bool FinishActive;
     bool GameOverActive;
@@ -62,6 +65,7 @@ public class GameMeneger : MonoBehaviour
     {
         SetValueCoins(0);
 
+       
         if (PL.enabled==false)PL.enabled=true;
        
         _buttomPauseUI = GameObject.Find("ButtonPause");
@@ -155,7 +159,7 @@ public class GameMeneger : MonoBehaviour
     //финиш и победа
     public void GameFinish()
     {
-        if (Time.timeScale != 1) Time.timeScale = 1;
+        //if (Time.timeScale != 1) Time.timeScale = 1;
         if(FinishActive) return;
         BagroundSource.Pause();
         Slinshot.S.aiming = false;
@@ -297,13 +301,15 @@ public class GameMeneger : MonoBehaviour
 
     public void PauseOnStarts()
     {
+        BagroundManeger.S.GamePause = true;
+        PauseOnStartTrue = true;
         //if (SceneManager.GetActiveScene().buildIndex == 0)
         //{
         //    return;
         //}
-        
+        BagroundSource.Pause();
         Time.timeScale = 0f;
-        //ShowAds();
+        ShowAds();
         //ButtomyJump.SetActive(false);
         Debug.Log("tryPause");
         if (PauseOnStart == null)
@@ -331,16 +337,26 @@ public class GameMeneger : MonoBehaviour
     }
     public void ExitPauseOnStarts()
     {
+        BagroundManeger.S.GamePause = false;
+        PauseOnStartTrue = false;
         PauseOnStart.SetActive(false);
         Time.timeScale = 1f;
-
+        BagroundSource.Play();
         _buttomFire.SetActive(true);
         _buttomPauseUI.SetActive(true);
         Slinshot.S.aiming = true;
         Slinshot.S.startControl();
+        
+    }
+    public void SoundPause()
+    {
+        BagroundSource.Pause();
+    }
+    public void SoundPlay()
+    {
+        if (PauseOnStartTrue==true) return;
         BagroundSource.Play();
     }
-
 
     void Update()
     {

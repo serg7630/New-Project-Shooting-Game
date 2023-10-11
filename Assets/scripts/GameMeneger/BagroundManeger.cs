@@ -11,29 +11,33 @@ public class BagroundManeger : MonoBehaviour
         if (pause)
         {
             Time.timeScale = 0;
+            GameMeneger.S.SoundPause();
         }
         else
         {
             Time.timeScale = 1;
+            GameMeneger.S.SoundPlay();
         }
     }
     private void OnApplicationFocus(bool focus)
     {
-        //if (focus)
-        //{
-        //    if (GamePause == true)
-        //    {
-        //        return;
-        //    }
-        //    Time.timeScale = 1;
-        //    Debug.Log("focus true");
+        if (focus)
+        {
+            if (GamePause == true)
+            {
+                return;
+            }
+            Time.timeScale = 1;
+            Debug.Log("focus true");
+            GameMeneger.S.SoundPlay();
 
-        //}
-        //else
-        //{
-        //    Time.timeScale = 0;
-        //    Debug.Log("focus false");
-        //}
+        }
+        else
+        {
+            Time.timeScale = 0;
+            Debug.Log("focus false");
+            GameMeneger.S.SoundPause();
+        }
     }
     void Start()
     {
