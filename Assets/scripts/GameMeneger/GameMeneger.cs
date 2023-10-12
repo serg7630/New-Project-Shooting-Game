@@ -351,11 +351,13 @@ public class GameMeneger : MonoBehaviour
     public void SoundPause()
     {
         BagroundSource.Pause();
+        Time.timeScale = 0;
     }
     public void SoundPlay()
     {
         if (PauseOnStartTrue==true) return;
         BagroundSource.Play();
+        if(Time.timeScale<1)Time.timeScale = 1;
     }
 
     void Update()
